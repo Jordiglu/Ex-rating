@@ -12,27 +12,35 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- <script src="js/programa.js"></script> -->
 </head>
-<script>
 
-    
-</script>
 
 <body>
     <div class="container">
-        <div class="star_widget">
-            <input type="radio" name="rate" id="rate-5">
-            <label for="rate-5" class="fas fa-star"></label>
-            <input type="radio" name="rate" id="rate-4">
-            <label for="rate-4" class="fas fa-star"></label>
-            <input type="radio" name="rate" id="rate-3">
-            <label for="rate-3" class="fas fa-star"></label>
-            <input type="radio" name="rate" id="rate-2">
-            <label for="rate-2" class="fas fa-star"></label>
-            <input type="radio" name="rate" id="rate-1">
-            <label for="rate-1" class="fas fa-star"></label>
-        </div>
-
+        <h1 class="title">Rating Stars</h1>
+        <ul class="rating">
+            <li class="rating-item" data-rate="1"></li>
+            <li class="rating-item" data-rate="2"></li>
+            <li class="rating-item" data-rate="3"></li>
+            <li class="rating-item" data-rate="4"></li>
+            <li class="rating-item" data-rate="5"></li>
+        </ul>
     </div>
 </body>
+
+<script>
+    const container = document.querySelector('.rating');
+    const items = container.querySelectorAll('.rating-item');
+
+
+    container.onclick = event => {
+        const elClass = event.target.classList;
+        if (!elClass.contains('active')) {
+            items.forEach(item => item.classList.remove('active'));
+            console.log(event.target.getAttribute("data-rate"));
+            elClass.add('active');
+            container.style.color = "yellow";
+        }
+    };
+</script>
 
 </html>

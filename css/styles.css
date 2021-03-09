@@ -12,33 +12,54 @@ html, body {
 }
 
 .container {
-    width: 400px;
-    background-color: grey;
-    padding: 20px 30px;
-    border: 1px solid #111;
-    border-radius: 5px;
+    max-width: 360px;
+    background-color: tomato;
+    width: 100%;
+    padding: 30px;
+    border-radius: 40px;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
-.container .star_widget input {
-    display: none;
+.rating {
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
-.star_widget label {
-    font-size: 40px;
-    color: #444;
-    padding: 10px;
-    float: right;
-    transition: all 0.2s ease;
+.rating li {
+    list-style-type: none;
+}
+
+.rating-item {
     cursor: pointer;
+    font-size: 2em;
 }
 
-input:not(:checked)~label:hover, input:not(:checked)~label:hover~label {
-    color: #fd4;
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
 }
 
-input:checked~label {
-    color: #fd4;
+.rating:hover {
+    color: yellow;
+}
+
+.rating-item::before {
+    content: "\2605";
+}
+
+.rating-item.active~.rating-item::before {
+    content: "\2606";
+}
+
+.rating:hover .rating-item::before {
+    content: "\2605";
+}
+
+.rating-item:hover~.rating-item::before {
+    content: "\2606";
 }
