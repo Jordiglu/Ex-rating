@@ -6,11 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex-rating</title>
-    <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/766d3e12a4.js" crossorigin="anonymous"></script>
     <!--Css styles-->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <script src="js/programa.js"></script> -->
 </head>
 
 
@@ -25,22 +22,9 @@
             <li class="rating-item" data-rate="5"></li>
         </ul>
     </div>
+
+    <!--JS-->
+    <script src="js/programa.js"></script>
 </body>
-
-<script>
-    const container = document.querySelector('.rating');
-    const items = container.querySelectorAll('.rating-item');
-
-
-    container.onclick = event => {
-        const elClass = event.target.classList;
-        if (!elClass.contains('active')) {
-            items.forEach(item => item.classList.remove('active'));
-            console.log(event.target.getAttribute("data-rate"));
-            elClass.add('active');
-            container.style.color = "yellow";
-        }
-    };
-</script>
 
 </html>
